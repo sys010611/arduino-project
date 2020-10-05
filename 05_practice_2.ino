@@ -11,25 +11,10 @@ void loop()
   delay(1000);
   digitalWrite(PIN_LED, 1); //처음 1초
   
-  digitalWrite(PIN_LED, 0);
-  delay(100);
-  digitalWrite(PIN_LED, 1); 
-  delay(100);
-  digitalWrite(PIN_LED, 0);
-  delay(100);
-  digitalWrite(PIN_LED, 1);
-  delay(100);
-  digitalWrite(PIN_LED, 0);
-  delay(100);
-  digitalWrite(PIN_LED, 1); 
-  delay(100);
-  digitalWrite(PIN_LED, 0);
-  delay(100);
-  digitalWrite(PIN_LED, 1); 
-  delay(100);
-  digitalWrite(PIN_LED, 0);
-  delay(100);
-  digitalWrite(PIN_LED, 1); 
+  for(int i = 0; i < 5; i++){
+    digitalWrite(PIN_LED, 0);
+    digitalWrite(PIN_LED, 1);
+  }
   while(1)
   {
     digitalWrite(PIN_LED, 1);
