@@ -28,8 +28,8 @@ bool event_dist, event_servo, event_serial;
 
 // PID parameters
 #define _KP 1
-#define _KI 2
-#define _KD 3
+#define _KI 0
+#define _KD 0
 
 // global variables
 float dist_raw, dist_prev, dist_ema, dist_prev_ema = 0, alpha = 0.3; // unit: mm
@@ -108,10 +108,9 @@ void loop() {
 
   // PID control logic
     error_curr = _DIST_TARGET - dist_ema;// [3073] 현재 읽어들인 데이터와 기준 값의 차이
-    pterm = error_curr;
-    //iterm += _KI * error_curr * _INTERVAL_DIST;
-    //dterm = _KD * (error_curr - error_prev) / _INTERVAL_DIST;
-    control = pterm*_KP;
+    pterm = _KP * error_curr;
+    dterm = _KD * (error_curr - error_prev)
+    control = pterm + dterm;
     error_prev = error_curr;
 
   // duty_target = f(duty_neutral, control)
