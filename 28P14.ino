@@ -19,7 +19,7 @@ float samples_num = 3;     // 스파이크 제거를 위한 부분필터에 샘�
 
 // Servo speed control
 #define _SERVO_ANGLE 30 
-#define _SERVO_SPEED 500
+#define _SERVO_SPEED 1000
 
 // configurable parameters
 #define _DUTY_MIN 1320 // servo full clockwise position (0 degree)
@@ -34,9 +34,9 @@ bool event_dist, event_servo, event_serial;
 #define _INTERVAL_SERIAL 100 // [3078] Serial제어주기 (ms)
 
 // PID parameters
-#define _KP 1.5
-#define _KI 0.001
-#define _KD 70
+#define _KP 1.7
+#define _KI 0.002
+#define _KD 90
 
 // global variables
 float dist_raw, dist_cali; // unit: mm
