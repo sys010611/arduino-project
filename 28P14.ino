@@ -34,9 +34,9 @@ bool event_dist, event_servo, event_serial;
 #define _INTERVAL_SERIAL 100 // [3078] Serial제어주기 (ms)
 
 // PID parameters
-#define _KP 1.7
-#define _KI 0.002
-#define _KD 90
+#define _KP 1.8
+#define _KI 0.01
+#define _KD 100
 
 // global variables
 float dist_raw, dist_cali; // unit: mm
